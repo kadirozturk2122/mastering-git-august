@@ -1,3 +1,4 @@
-# mastering-git-august
-## header2
-### header3
+# This is our first repo
+## We made our first scripts 
+- scrypt.sh
+- python.py
