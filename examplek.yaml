@@ -1,0 +1,17 @@
+--- # Connection
+- name: Install packages
+  hosts: ubuntu
+  become: true
+  become_method: sudo 
+  user: ec2-user
+  tasks: 
+
+
+
+
+
+  # Task block
+  - name: Install telnet 
+    ansible.builtin.package:
+      name: telnet
+      state: absent            #present       #latest
