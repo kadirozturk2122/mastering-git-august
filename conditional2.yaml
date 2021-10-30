@@ -1,0 +1,38 @@
+--- # Connection
+#ansible-playbook user.yaml
+# link
+- name: Install packages
+  hosts: inventory
+  become: true
+  become_method: sudo 
+  user: ec2-user
+  tasks: 
+  # -name: Print all available facts
+  # ansible.builtin.debug:
+  #   var: ansible_facts
+  -name: Add users
+   when: ansible_facts['distribution'] == "Amazon"
+    ansible.builtin.user:
+      name: "{{item}}"
+      state: present
+    with_items:
+    - ben
+    - johns
+    - lisa
+
+
+
+
+
+
+
+
+
+
+
+
+  # Task block
+  - name: Install telnet 
+    ansible.builtin.package:
+      name: telnet
+      state: absent            #present       #latest
