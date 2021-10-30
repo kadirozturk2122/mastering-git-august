@@ -2,7 +2,7 @@
 #ansible-playbook user.yaml
 # link
 - name: Install packages
-  hosts: all
+  hosts: localhost
   become: true
   become_method: sudo 
   user: ec2-user
